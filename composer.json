@@ -1,6 +1,7 @@
 {
   "name": "gabrielpcruz/slim-core",
   "type": "library",
+  "minimum-stability": "dev",
   "description": "Slim core framework 4 application (http + cli + oauth2)",
   "keywords": [
     "microframework",
