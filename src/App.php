@@ -43,17 +43,17 @@ abstract class App
     /**
      * @var SlimApp
      */
-    private static SlimApp $app;
+    protected static SlimApp $app;
 
     /**
      * @var Container
      */
-    private static Container $container;
+    protected static Container $container;
 
     /**
      * @var Messages
      */
-    private static Messages $flash;
+    protected static Messages $flash;
 
     /**
      * @var array
@@ -71,7 +71,7 @@ abstract class App
     /**
      * @return string
      */
-    private static function getType(): string
+    protected static function getType(): string
     {
         return php_sapi_name() == 'cli' ? 'console' : 'http';
     }
@@ -207,7 +207,7 @@ abstract class App
      * @throws NotFoundException
      * @throws Exception
      */
-    private static function getContainer(): Container
+    protected static function getContainer(): Container
     {
         if (!isset(self::$container)) {
             self::$container = (new ContainerBuilder())->build();
@@ -225,7 +225,7 @@ abstract class App
      * @throws NotFoundException
      * @throws NotFoundExceptionInterface
      */
-    private static function provide(Container $container, Dot $settings): void
+    protected static function provide(Container $container, Dot $settings): void
     {
         $providersPath = self::settings()->get('path.slim.provider');
         var_dump($providersPath);
@@ -248,7 +248,7 @@ abstract class App
      * @param Dot $settings
      * @return void
      */
-    private static function defineConstants(Dot $settings): void
+    protected static function defineConstants(Dot $settings): void
     {
         define('STORAGE_PATH', $settings->get('path.storage'));
         define('PUBLIC_PATH', $settings->get('path.public'));
