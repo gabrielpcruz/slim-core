@@ -20,5 +20,6 @@ $settings['path'] = [
         ],
         'migration' => ROOT_PATH_SLIM_CORE . '/src/Migration',
         'seeder' => ROOT_PATH_SLIM_CORE . '/src/Seeder',
+        'provider' => ROOT_PATH_SLIM_CORE . '/src/Provider',
     ]
 ];
